@@ -1,8 +1,9 @@
 package com.company;
 
-/**
- * Created by riybochkinfd.19 on 14.11.2016.
- */
-public class Hand extends linkedlist<Card> {
+import java.util.LinkedList;
 
+/**
+ * Created by falyanguzov on 14.11.2016.
+ */
+public class Hand extends LinkedList<Card> {
 }
