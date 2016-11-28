@@ -1,21 +1,29 @@
 package com.company;
 
 /**
- * Created by riybochkinfd.19 on 21.11.2016.
+ * Created by falyanguzov on 14.11.2016.
  */
 public abstract class Player {
-        Hand hand = new Hand();
-        private Intellect intellect;
+    Hand hand = new Hand();
+    private Intellect intellect;
+    String name;
+    PlayerState state = PlayerState.IN_GAME;
 
-        public Player(Intellect intellect) {
-                this.intellect = intellect;
-        }
+    public Player(String name, Intellect intellect) {
+        this.intellect = intellect;
+        this.name = name;
+    }
 
-        public void take(Card current) {
-                hand.add(current);
-        }
+    public void take(Card current) {
+        hand.add(current);
+    }
 
-        public Command decision() {
-                return intellect.decide();
-        }
+    public Command decision() {
+
+        int score = hand.getScore();
+        if(score>21)
+            return Command.STAND;
+        return intellect.decide(score);
+
+    }
 }

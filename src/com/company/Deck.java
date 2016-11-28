@@ -1,10 +1,11 @@
 package com.company;
-/**
- * Created by riybochkinfd.19 on 21.11.2016.
- */
+
 import java.util.Collections;
 import java.util.LinkedList;
 
+/**
+ * Created by falyanguzov on 14.11.2016.
+ */
 public class Deck extends LinkedList<Card> {
     public Deck() {
         for (Suit s : Suit.values())
